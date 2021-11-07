@@ -59,3 +59,50 @@
         }
     }
 ```
+
+## Center vertically
+<img width="340" alt="iPhone_12" src="https://user-images.githubusercontent.com/47273077/140647196-070a0b60-17fe-46b7-9df0-267eedb0abea.png">
+
+```swift
+
+    func setupView() {
+        // colouring
+        redSquareView.backgroundColor = .red
+        greenSquareView.backgroundColor = .green
+        blueSquareView.backgroundColor = .blue
+        yellowSquareView.backgroundColor = .yellow
+        orangeSquareView.backgroundColor = .orange
+        // add subviews
+        [redSquareView, greenSquareView, blueSquareView, yellowSquareView, orangeSquareView].forEach { box in
+            view.addSubview(box)
+        }
+        // center-left
+        redSquareView.snp.makeConstraints { make in
+            make.width.height.equalTo(boxWidth)
+            make.centerY.leading.equalToSuperview()
+        }
+        // center-right
+        greenSquareView.snp.makeConstraints { make in
+            make.width.height.equalTo(boxWidth)
+            make.centerY.trailing.equalToSuperview()
+        }
+        
+        // bottom-left
+        blueSquareView.snp.makeConstraints { make in
+            make.width.height.equalTo(boxWidth)
+            make.bottom.leading.equalToSuperview()
+        }
+        // bottom-right
+        yellowSquareView.snp.makeConstraints { make in
+            make.width.height.equalTo(boxWidth)
+            make.bottom.trailing.equalToSuperview()
+        }
+        
+        // center
+        orangeSquareView.snp.makeConstraints { make in
+            make.width.height.equalTo(boxWidth)
+            make.center.equalToSuperview()
+        }
+    }
+  ```
+
