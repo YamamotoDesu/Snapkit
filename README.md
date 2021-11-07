@@ -105,4 +105,48 @@
         }
     }
   ```
+<img width="354" alt="iPhone_12" src="https://user-images.githubusercontent.com/47273077/140647453-c52ee244-089b-4a74-b1fd-d9bcecc0b464.png">
+
+```swift 
+    func setupView() {
+        // colouring
+        redSquareView.backgroundColor = .red
+        greenSquareView.backgroundColor = .green
+        blueSquareView.backgroundColor = .blue
+        yellowSquareView.backgroundColor = .yellow
+        orangeSquareView.backgroundColor = .orange
+        // add subviews
+        [redSquareView, greenSquareView, blueSquareView, yellowSquareView, orangeSquareView].forEach { box in
+            view.addSubview(box)
+        }
+        
+        // center-left
+        redSquareView.snp.makeConstraints { make in
+            make.width.height.equalTo(boxWidth)
+            make.centerY.leading.equalToSuperview()
+        }
+        // center-right
+        greenSquareView.snp.makeConstraints { make in
+            make.width.height.equalTo(boxWidth)
+            make.centerY.trailing.equalToSuperview()
+        }
+        
+        // bottom-left
+        blueSquareView.snp.makeConstraints { make in
+            make.width.height.equalTo(boxWidth)
+            make.bottom.leading.equalToSuperview()
+        }
+        // bottom-right
+        yellowSquareView.snp.makeConstraints { make in
+            make.width.height.equalTo(boxWidth)
+            make.bottom.trailing.equalToSuperview()
+        }
+        
+        // top full-width
+        orangeSquareView.snp.makeConstraints { make in
+            make.height.equalTo(boxWidth)
+            make.leading.trailing.equalToSuperview()
+            make.top.equalToSuperview()
+        }
+```
 
