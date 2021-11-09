@@ -186,3 +186,40 @@
         }
 ```
 
+## Top-left and top-right
+<img width="355" alt="iPhone_12" src="https://user-images.githubusercontent.com/47273077/140915813-54278088-96da-40ad-88ca-87c1adb49098.png">
+
+```swift
+        
+        // top-left with padding
+        redSquareView.snp.makeConstraints { make in
+            make.width.height.equalTo(boxWidth)
+            make.top.equalToSuperview().offset(80)
+            make.leading.equalToSuperview().offset(40)
+        }
+        // top-right with padding
+        greenSquareView.snp.makeConstraints { make in
+            make.width.height.equalTo(boxWidth)
+            make.top.equalToSuperview().offset(80)
+            make.trailing.equalToSuperview().offset(-40)
+        }
+```
+
+## Bottom-left and bottom-right
+<img width="365" alt="iPhone_12" src="https://user-images.githubusercontent.com/47273077/140916212-2a7c6686-8bdd-4fda-b006-6bb8b2ff70be.png">
+
+```swift
+        // bottom-left with padding
+        blueSquareView.snp.makeConstraints { make in
+            make.width.height.equalTo(boxWidth)
+            make.leading.equalToSuperview().offset(40)
+            make.bottom.equalToSuperview().offset(-80)
+        }
+        // bottom-right with padding
+        yellowSquareView.snp.makeConstraints { make in
+            make.width.height.equalTo(boxWidth)
+            make.trailing.equalToSuperview().offset(-40)
+            make.bottom.equalToSuperview().offset(-80)
+        }
+```
+
