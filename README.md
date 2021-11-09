@@ -151,3 +151,38 @@
         }
 ```
 
+## 3. Superview vs. Safe Area
+<img width="356" alt="iPhone_12" src="https://user-images.githubusercontent.com/47273077/140913838-e1823e30-7199-4f11-bb0b-53417b320723.png">
+
+```swift
+        // top-left (with safe-area)
+        redSquareView.snp.makeConstraints { make in
+            make.width.height.equalTo(boxWidth)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.leading.equalToSuperview()
+        }
+        // top-right (with safe-area)
+        greenSquareView.snp.makeConstraints { make in
+            make.width.height.equalTo(boxWidth)
+            make.trailing.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+        }
+        // bottom-left (with safe-area)
+        blueSquareView.snp.makeConstraints { make in
+            make.width.height.equalTo(boxWidth)
+            make.leading.equalToSuperview()
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        }
+        // bottom-right (with safe-area)
+        yellowSquareView.snp.makeConstraints { make in
+            make.width.height.equalTo(boxWidth)
+            make.trailing.equalToSuperview()
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        }
+        // center
+        orangeSquareView.snp.makeConstraints { make in
+            make.width.height.equalTo(boxWidth)
+            make.center.equalToSuperview()
+        }
+```
+
