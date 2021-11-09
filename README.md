@@ -223,3 +223,13 @@
         }
 ```
 
+## Leading and trailing with inset()
+<img width="359" alt="iPhone_12" src="https://user-images.githubusercontent.com/47273077/140917403-35c320e3-d544-4ab4-b086-4722abd3b24b.png">
+```swift
+        orangeSquareView.snp.makeConstraints { make in
+            make.height.equalTo(boxWidth)
+            make.top.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(40)
+        }
+```
+
