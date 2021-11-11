@@ -237,6 +237,7 @@
 
 ## Constraints and Animation
 <img width="359" alt="iPhone_12" src="https://github.com/YamamotoDesu/Snapkit/blob/main/SnapkitExample/Gif/Animation.gif">
+
 ```swift
         // top-left with padding (original position)
         redSquareView.snp.makeConstraints { make in
