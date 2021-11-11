@@ -237,5 +237,24 @@
 
 ## Constraints and Animation
 
+```swift
+        // top-left with padding (original position)
+        redSquareView.snp.makeConstraints { make in
+            make.width.height.equalTo(boxWidth)
+            make.top.equalToSuperview().offset(80)
+            make.leading.equalToSuperview().offset(40)
+        }
+        // ensures that all pending layout operations complete
+        view.layoutIfNeeded()
 
+
+        // update top padding to 200px with animation after 1 seconds delay
+        UIView.animate(withDuration: 0.5, delay: 1.0) {
+            self.redSquareView.snp.updateConstraints { make in
+                make.top.equalToSuperview().offset(200)
+            }
+            // trigger layout update
+            self.view.layoutIfNeeded()
+        }
+```
 
