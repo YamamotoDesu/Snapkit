@@ -258,3 +258,23 @@
         }
 ```
 
+## Using Multiplier
+<img width="362" alt="iPhone_12" src="https://user-images.githubusercontent.com/47273077/141291965-a4cdb70d-22d0-4e53-b8e9-66404df2a205.png">
+
+```swift
+        // top-left (width = 0.5 of superview)
+        redSquareView.snp.makeConstraints { make in
+            make.width.equalToSuperview().multipliedBy(0.5)
+            make.height.equalTo(80)
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview()
+        }
+        // top-right
+        greenSquareView.snp.makeConstraints { make in
+            make.width.equalToSuperview().multipliedBy(0.5)
+            make.height.equalTo(80)
+            make.top.equalToSuperview()
+            make.trailing.equalToSuperview()
+        }
+```
+
